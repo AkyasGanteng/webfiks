@@ -44,14 +44,21 @@
         }
     </style>
 
-    <ul>
-        <li><a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">Halaman Utama</a></li>
-        <li><a href="{{ route('items.index') }}" class="{{ request()->routeIs('items.*') ? 'active' : '' }}">Data Barang</a></li>
-        <li><a href="{{ route('pemasukan.index') }}" class="{{ request()->routeIs('pemasukan') ? 'active' : '' }}">Pemasukan</a></li>
-        <li>
-    <a href="{{ route('pengeluaran.index') }}" class="{{ request()->routeIs('pengeluaran.*') ? 'active' : '' }}">
-        Pengeluaran
-    </a>
-</li>  
-    </ul>
+<ul class="nav flex-column">
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('items.index') }}">Data Barang</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('pemasukan.index') }}">Pemasukan Stok</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('pengeluaran.index') }}">Pengeluaran Stok</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{{ route('laporan.index') }}">Laporan Stok</a>
+</li>
+</ul>
 </nav>

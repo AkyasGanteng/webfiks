@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PemasukanStokController;
 use App\Http\Controllers\PengeluaranStokController;
+use App\Http\Controllers\LaporanController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,6 +49,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('items', ItemController::class);
     Route::resource('pemasukan', PemasukanStokController::class);
     Route::resource('pengeluaran', PengeluaranStokController::class);
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    
     
 });
 
